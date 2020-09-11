@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.homepage     = package['homepage']
   s.platforms    = { :ios => "9.0", :tvos => "9.2", :osx => "10.14" }
 
-  s.source       = { :git => "https://github.com:brobrune/async-storage.git", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/brobrune/async-storage", :tag => "v#{s.version}" }
   s.source_files  = "ios/**/*.{h,m}"
 
   s.dependency 'React'
