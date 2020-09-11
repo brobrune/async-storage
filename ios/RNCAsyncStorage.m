@@ -221,6 +221,11 @@ static void _createStorageDirectory(NSString *storageDirectory, NSError **error)
                             withIntermediateDirectories:YES
                                              attributes:nil
                                                   error:error];
+  // Disabling ICloud Backups.
+  // Remove these lines after issue(https://github.com/react-native-community/async-storage/issues/249) will be resolved
+  NSURL *URL = [NSURL fileURLWithPath:storageDirectory];
+  BOOL success = [URL setResourceValue:[NSNumber numberWithBool: YES] forKey:NSURLIsExcludedFromBackupKey error:error];
+  //
 }
 
 static void RCTStorageDirectoryMigrate(NSString *oldDirectoryPath, NSString *newDirectoryPath, BOOL shouldCleanupOldDirectory)
